@@ -1,38 +1,141 @@
-/* Styling the official white logo */
-.nav-logo { height: 40px; width: auto; }
-.jerry-icon { height: 50px; width: auto; margin-bottom: 10px; }
+/* 1. RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 
-/* Adjusting Navbar for dark background or contrast */
+body {
+    background-color: #f4f4f4;
+}
+
+/* 2. NAVIGATION */
 .navbar {
-    background-color: #1a1a1a; /* Darker bar to make the white logo stand out */
     display: flex;
     justify-content: space-between;
-    padding: 15px 5%;
     align-items: center;
+    padding: 15px 5%;
+    background-color: #1a1a1a; /* Dark background to make white logo pop */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    height: 35px; /* Fixes the giant logo issue */
+    width: auto;
 }
 
 .nav-links a {
-    color: white; /* Changed to white to match the new dark navbar */
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-/* The yellow jerry can icon inside the donation box */
+.search-icon {
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/* 3. HERO SECTION */
+.hero {
+    /* Ensure the filename below matches your renamed image exactly */
+    background-image: url('img/hero-water.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    position: relative;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.4); /* Darkens photo so text is readable */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    text-align: center;
+    color: white;
+    max-width: 700px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+/* 4. DONATION BOX */
+.donation-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 30px;
+    color: #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
 .jerry-icon {
-    width: 40px;
-    margin-bottom: 10px;
+    height: 50px; /* Limits the size of the yellow can */
+    margin-bottom: 15px;
 }
 
-/* The Donate Button - Using the official charity: water yellow */
+.toggle-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-toggle {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.btn-toggle.active {
+    background: #333;
+    color: white;
+    border-color: #333;
+}
+
 .btn-donate {
-    display: block;
     width: 100%;
     padding: 15px;
-    background: #FFC107; 
-    color: #333;
+    background-color: #FFC107; /* charity: water yellow */
     border: none;
+    border-radius: 5px;
     font-weight: bold;
-    border-radius: 4px;
-    margin-top: 15px;
+    font-size: 1.1rem;
     cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    transition: all 0.3s ease; /* Task 4: Transition effect */
+}
+
+.btn-donate:hover {
+    background-color: #e0a800;
+    transform: translateY(-3px); /* Task 4: Transform effect */
+}
+
+.small-print {
+    font-size: 12px;
+    color: #777;
+    margin-top: 15px;
+}
+
+/* 5. RESPONSIVENESS (Task 4) */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .navbar { padding: 10px 20px; }
+    .nav-links { display: none; } /* Simplifies mobile view */
 }
