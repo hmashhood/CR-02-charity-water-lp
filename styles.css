@@ -1,8 +1,6 @@
 /* Styling the official white logo */
-.nav-logo {
-    height: 30px; /* Adjust height to fit your navbar */
-    filter: invert(0); /* Keeps it white */
-}
+.nav-logo { height: 40px; width: auto; }
+.jerry-icon { height: 50px; width: auto; margin-bottom: 10px; }
 
 /* Adjusting Navbar for dark background or contrast */
 .navbar {
